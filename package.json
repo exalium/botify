@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "@telegram": "npm:tdl"
+  },
+  "description": "Automating the work with 'airdrop' bots in Telegram. Currently supported: BlumCryptoBot",
+  "devDependencies": {
+    "@telegram/prebuild": "npm:prebuilt-tdlib",
+    "@types/bun": "latest"
+  },
+  "homepage": "https://github.com/alex-mxrz/Botify",
+  "keywords": [
+    "airdrop",
+    "automation",
+    "blum-bot",
+    "blum-crypto",
+    "blum",
+    "telegram",
+    "typescript"
+  ],
+  "license": "GPL-3.0-or-later",
+  "name": "botify",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "private": true,
+  "scripts": {
+    "start": "bun run src/index.ts"
+  },
+  "type": "module",
+  "version": "0.1a"
+}
