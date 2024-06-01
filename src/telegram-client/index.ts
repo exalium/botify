@@ -38,8 +38,16 @@ export class TelegramClient {
   }
 
   public async extractWebAppData(
-    clientSession: ClientSession
+    clientSession?: ClientSession
   ): Promise<string | undefined> {
+    if (!clientSession) {
+      console.error(
+        '@TelegramClient.extractWebAppData => Client session is not provided'
+      );
+
+      return undefined;
+    }
+
     const webAppUrl = this.clientInfo.webappUrl;
 
     if (!webAppUrl || webAppUrl.length <= 0) {
@@ -75,9 +83,9 @@ export class TelegramClient {
   }
 
   public async initialize(): Promise<ClientSession | undefined> {
-    const username = await this.authorize();
+    const firstName = await this.authorize();
 
-    if (!username || username.length <= 0) {
+    if (!firstName || firstName.length <= 0) {
       console.error(
         '@TelegramClient.initialize => Failed to authorize in Telegram'
       );
@@ -85,7 +93,7 @@ export class TelegramClient {
       return undefined;
     }
 
-    console.log(`@TelegramClient.initialize => Authorized as '${username}'`);
+    console.log(`@TelegramClient.initialize => Authorized as '${firstName}'`);
 
     const botInfo = await this.botInfo();
 
@@ -102,7 +110,7 @@ export class TelegramClient {
     return {
       botAccountId: botInfo.botId,
       botChatId: botInfo.chatId,
-      username
+      firstName
     };
   }
 

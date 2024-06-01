@@ -19,5 +19,5 @@ export interface ClientInfo {
 export interface ClientSession {
   readonly botAccountId: number;
   readonly botChatId: number;
-  readonly username: string;
+  readonly firstName: string;
 }
