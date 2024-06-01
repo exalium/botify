@@ -39,7 +39,7 @@ Botify is a tool designed to automate interactions with 'airdrop' bots on Telegr
 ### Prerequisites
 
 Before you begin, ensure you have met the following requirements:
-- You have installed [Bun](https://bun.sh "Bun is an all-in-one JavaScript runtime & toolkit") or [Node.js](https://nodejs.org "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine") on your machine. We recommend using **Bun**.
+- You have installed [Bun](https://bun.sh "Bun is an all-in-one JavaScript runtime & toolkit") on your machine.
 - You have a Telegram account.
 - You have the Blum bot added to your Telegram chats. You can find it [here](https://t.me/BlumCryptoBot "Blum Bot on Telegram") or via this [referral link](https://t.me/BlumCryptoBot/app?startapp=ref_GQV3W2go3I "Blum Bot on Telegram with referral link").
 
@@ -55,7 +55,7 @@ Before you begin, ensure you have met the following requirements:
     ```
 3. Install the required packages:
     ```bash
-    bun install # or npm install
+    bun install
     ```
 4. Configure the .env file (see [Configuration](#configuration)).
 
@@ -72,7 +72,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. Run the project with the following command:
     ```bash
-    bun start # or npm start
+    bun start
     ```
 2. Follow the instructions in the console to authorize your Telegram account and interact with the bots.
 
