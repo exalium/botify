@@ -1,6 +1,8 @@
 import type {
+  BalanceClaimResponse,
   BalanceResponse,
   Farm,
+  FriendsClaimResponse,
   GamePayload,
   GameStartRequest,
   Task,
@@ -41,7 +43,7 @@ export async function claimDailyReward(
 export async function claimFarm(
   baseUrl: string,
   fetchOptions: FetchRequestInit
-): Promise<undefined> {
+): Promise<BalanceClaimResponse | undefined> {
   const response = await fetch(`${baseUrl}/api/v1/farming/claim`, {
     ...fetchOptions,
     method: 'POST'
@@ -55,15 +57,13 @@ export async function claimFarm(
     return undefined;
   }
 
-  // TODO: Parse farm data from bot, idk what returns here
-
-  return undefined;
+  return response.json();
 }
 
 export async function claimReferralReward(
   baseUrl: string,
   fetchOptions: FetchRequestInit
-): Promise<undefined> {
+): Promise<FriendsClaimResponse | undefined> {
   const response = await fetch(`${baseUrl}/v1/friends/claim`, {
     ...fetchOptions,
     method: 'POST'
@@ -77,15 +77,13 @@ export async function claimReferralReward(
     return undefined;
   }
 
-  // TODO: Parse farm data from bot, idk what returns here
-
-  return undefined;
+  return response.json();
 }
 
 export async function completeGame(
-  fetchOptions: FetchRequestInit,
   baseUrl: string,
-  payload: GamePayload
+  payload: GamePayload,
+  fetchOptions: FetchRequestInit
 ): Promise<boolean> {
   const response = await fetch(`${baseUrl}/api/v1/game/claim`, {
     ...fetchOptions,
@@ -103,6 +101,7 @@ export async function completeGame(
 
   return true;
 }
+
 export async function completeTask(
   baseUrl: string,
   taskId: string,

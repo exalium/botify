@@ -11,6 +11,12 @@ export interface AuthToken {
   };
 }
 
+export interface BalanceClaimResponse {
+  readonly availableBalance: string;
+  readonly playPasses: number;
+  readonly timestamp: number;
+}
+
 export interface BalanceResponse {
   readonly availableBalance: string;
   readonly farming: Farm;
@@ -40,6 +46,10 @@ export interface FriendsBalanceResponse {
   readonly percentFromFriendsOfFriends: number;
   readonly referralToken: string;
   readonly usedInvitation: string;
+}
+
+export interface FriendsClaimResponse {
+  readonly claimBalance: string;
 }
 
 export interface FriendsResponse {
