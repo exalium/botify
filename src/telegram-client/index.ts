@@ -87,7 +87,7 @@ export class TelegramClient {
 
     console.log(`@TelegramClient.initialize => Authorized as '${username}'`);
 
-    const botInfo = await this.getBotInfo();
+    const botInfo = await this.botInfo();
 
     if (!botInfo) {
       console.error('@TelegramClient.initialize => Failed to get bot info');
@@ -130,7 +130,7 @@ export class TelegramClient {
     return data.first_name;
   }
 
-  private async getBotInfo(): Promise<BotInfo | undefined> {
+  private async botInfo(): Promise<BotInfo | undefined> {
     const botName = this.clientInfo.botName;
 
     if (!botName || botName.length <= 0) {
@@ -184,3 +184,5 @@ export class TelegramClient {
   private static readonly databasePath = '.temp/db';
   private static readonly filesPath = '.temp/files';
 }
+
+export type * from './types';

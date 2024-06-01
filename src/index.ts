@@ -1,18 +1,38 @@
+// import { BlumClient } from './blum';
+
 // import { TelegramClient } from './telegram-client';
 
 (async () => {
   // TelegramClient.configureTdLib();
 
-  // const client = new TelegramClient(
-  //   {
-  //     apiHash: 'dfd4909a4e3e89f6d285185711ab77d9',
-  //     apiId: 29554815
-  //   },
-  //   {
-  //     botName: 'Blum',
-  //     webappUrl: ''
-  //   }
-  // );
+  // const appHash = process.env.TELEGRAM_API_HASH;
 
-  // const clientSession = await client.initialize();
+  // if (!appHash || appHash.length <= 0) {
+  //   console.error('TELEGRAM_API_HASH is not provided');
+
+  //   return;
+  // }
+
+  // const apiId = process.env.TELEGRAM_API_ID;
+
+  // if (!apiId || apiId.length <= 0) {
+  //   console.error('TELEGRAM_API_ID is not provided');
+
+  //   return;
+  // }
+
+  // const blumClient = new BlumClient({
+  //   client: {
+  //     apiHash: appHash,
+  //     apiId: Number.parseInt(apiId, 10)
+  //   },
+  //   clientInfo: {
+  //     botName: 'Blum',
+  //     webappUrl: 'https://telegram.blum.codes'
+  //   },
+  //   gameUrl: 'https://game-domain.blum.codes',
+  //   gateUrl: 'https://gateway.blum.codes'
+  // });
+
+  // const status = await blumClient.initialize();
 })();
