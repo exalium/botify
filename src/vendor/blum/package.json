@@ -1,0 +1,7 @@
+{
+  "dependencies": {},
+  "devDependencies": {},
+  "module": "src/index.ts",
+  "name": "botify-blum",
+  "type": "module"
+}
